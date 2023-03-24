@@ -12,7 +12,7 @@ describe('Rendering App component', () => {
       </MemoryRouter>
     );
 
-    const header = screen.getByText(/This is header/i);
+    const header = screen.getByRole('banner');
     expect(header).toBeInTheDocument();
   });
   it('Renders homepage by default', () => {
@@ -22,7 +22,7 @@ describe('Rendering App component', () => {
       </MemoryRouter>
     );
 
-    const homepage = screen.getByText(/homepage/i);
+    const homepage = screen.getByText(/become the next Chopin/i);
     expect(homepage).toBeInTheDocument();
   });
 });
