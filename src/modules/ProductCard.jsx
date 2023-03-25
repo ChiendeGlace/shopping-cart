@@ -1,7 +1,32 @@
 import { Link } from 'react-router-dom';
-import React from './react.svg';
 
-function ProductCard({ name, price, source = React }) {
+function ProductCard({
+  name, price, source, setShoppingCart,
+}) {
+  const handleClick = () => {
+    setShoppingCart((prev) => {
+      const existingIndex = prev.findIndex((item) => item.name === name);
+      if (existingIndex !== -1) {
+        return prev.map((item, index) => {
+          if (index === existingIndex) {
+            return {
+              ...item,
+              quantity: item.quantity + 1,
+            };
+          }
+          return item;
+        });
+      }
+      return [
+        ...prev,
+        {
+          name,
+          price,
+          quantity: 1,
+        },
+      ];
+    });
+  };
   return (
     <div className="product-card">
       <Link to={name.toLowerCase()}>
@@ -10,8 +35,13 @@ function ProductCard({ name, price, source = React }) {
       <Link to={name.toLowerCase()}>
         <h3>{name}</h3>
       </Link>
-      <p>{price}</p>
-      <button type="button">Add to cart</button>
+      <p>
+        $
+        {price}
+      </p>
+      <button onClick={handleClick} type="button">
+        Add to cart
+      </button>
     </div>
   );
 }

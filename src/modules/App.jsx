@@ -7,16 +7,23 @@ import Instrumentpage from './Instrumentpage';
 import ShoppingCart from './ShoppingCart';
 
 function App() {
+  const [shoppingCart, setShoppingCart] = useState([]);
   const [displayCart, setDisplayCart] = useState(false);
   return (
     <>
       <Header setDisplayCart={setDisplayCart} />
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/products-page" element={<Productspage />} />
-        <Route path="/products-page/:id" element={<Instrumentpage />} />
+        <Route
+          path="/products-page"
+          element={<Productspage setShoppingCart={setShoppingCart} />}
+        />
+        <Route
+          path="/products-page/:id"
+          element={<Instrumentpage setShoppingCart={setShoppingCart} />}
+        />
       </Routes>
-      {displayCart ? <ShoppingCart /> : null}
+      {displayCart ? <ShoppingCart shoppingCart={shoppingCart} /> : null}
     </>
   );
 }

@@ -1,8 +1,9 @@
 /* eslint-disable comma-dangle */
 import { render, screen, fireEvent } from '@testing-library/react';
 import { it, describe, expect } from 'vitest';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 import ProductCard from '../modules/ProductCard';
+import App from '../modules/App';
 
 describe('ProductCard component', () => {
   it('renders the product name, price and image', () => {
@@ -48,5 +49,32 @@ describe('ProductCard component', () => {
     fireEvent.click(productImage);
 
     expect(window.location.pathname).toBe('/piano');
+  });
+});
+
+describe('Filter test', () => {
+  it('renders the product name, price and image', () => {
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <App />
+      </MemoryRouter>
+    );
+    const visitShop = screen.getByRole('button', { name: 'Visit the shop' });
+    fireEvent.click(visitShop);
+
+    const stringFilter = screen.getByRole('button', { name: 'String' });
+    fireEvent.click(stringFilter);
+
+    const stringInstruments = screen.getAllByRole('img');
+    expect(stringInstruments).toHaveLength(3);
+
+    const removeFilter = screen.getByRole('button', { name: 'X' });
+    fireEvent.click(removeFilter);
+
+    const keyboardFilter = screen.getByRole('button', { name: 'Keyboard' });
+    fireEvent.click(keyboardFilter);
+
+    const keyboardInstruments = screen.getAllByRole('img');
+    expect(keyboardInstruments).toHaveLength(2);
   });
 });
