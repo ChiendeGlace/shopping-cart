@@ -1,0 +1,42 @@
+header {
+  padding: 2em 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h1 {
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    .nav-link {
+      font-size: 1.25rem;
+    }
+    button {
+      font-size: 1.25rem;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+  .cart-div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    .cart-div-quantity {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      background-color: black;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+}

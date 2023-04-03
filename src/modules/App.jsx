@@ -5,13 +5,15 @@ import Homepage from './Homepage';
 import Productspage from './Productspage';
 import Instrumentpage from './Instrumentpage';
 import ShoppingCart from './ShoppingCart';
+import ScrollToTop from './ScrollToTop';
 
 function App() {
   const [shoppingCart, setShoppingCart] = useState([]);
   const [displayCart, setDisplayCart] = useState(false);
   return (
     <>
-      <Header setDisplayCart={setDisplayCart} />
+      <Header setDisplayCart={setDisplayCart} shoppingCart={shoppingCart} />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route
@@ -23,7 +25,14 @@ function App() {
           element={<Instrumentpage setShoppingCart={setShoppingCart} />}
         />
       </Routes>
-      {displayCart ? <ShoppingCart shoppingCart={shoppingCart} /> : null}
+      {displayCart ? (
+        <ShoppingCart
+          shoppingCart={shoppingCart}
+          displayCart={displayCart}
+          setDisplayCart={setDisplayCart}
+          setShoppingCart={setShoppingCart}
+        />
+      ) : null}
     </>
   );
 }

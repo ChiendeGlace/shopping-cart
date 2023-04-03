@@ -1,0 +1,25 @@
+.instrument-page {
+  padding: 5em 20%;
+  display: flex;
+  gap: 32px;
+  h2 {
+    font-size: 1.75rem;
+  }
+  button {
+    font-size: 1rem;
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .text-div {
+    display: flex;
+    flex-direction: column;
+    gap: 16px
+  }
+  .button-div {
+    display: flex;
+    gap: 8px;
+  }
+}

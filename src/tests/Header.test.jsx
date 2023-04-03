@@ -12,7 +12,7 @@ describe('Navigation links', () => {
       </MemoryRouter>
     );
 
-    const homeLink = screen.getByRole('link', { name: 'Home' });
+    const homeLink = screen.getByRole('link', { name: 'HOME' });
     fireEvent.click(homeLink);
 
     const homepage = screen.getByText(/become the next Chopin/i);
@@ -26,7 +26,7 @@ describe('Navigation links', () => {
       </MemoryRouter>
     );
 
-    const mainHeader = screen.getByRole('heading', { name: 'Music Shop' });
+    const mainHeader = screen.getByRole('heading', { name: 'MUSIC SHOP' });
     fireEvent.click(mainHeader);
 
     const homepage = screen.getByText(/become the next Chopin/i);
@@ -40,7 +40,7 @@ describe('Navigation links', () => {
       </MemoryRouter>
     );
 
-    const productsLink = screen.getByRole('link', { name: 'Products' });
+    const productsLink = screen.getByRole('link', { name: 'PRODUCTS' });
     fireEvent.click(productsLink);
 
     const productspage = screen.getByRole('heading', {
@@ -55,7 +55,7 @@ describe('Navigation links', () => {
       </MemoryRouter>
     );
 
-    const button = screen.getByRole('button', { name: 'Cart' });
+    const button = screen.getByRole('button', { name: 'CART' });
     fireEvent.click(button);
 
     const cart = screen.getByText(/Shopping cart/i);

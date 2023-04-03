@@ -1,0 +1,42 @@
+.shopping-cart {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: end;
+}
+
+.shopping-cart-body {
+  background-color: #fff;
+  bottom: 0;
+  top: 0;
+  position: absolute;
+  width: 25vw;
+  padding: 5em;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+  .cart-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .button-div {
+        display: flex;
+    }
+  }
+}
+

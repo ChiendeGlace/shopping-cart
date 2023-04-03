@@ -68,7 +68,7 @@ describe('Filter test', () => {
     const stringInstruments = screen.getAllByRole('img');
     expect(stringInstruments).toHaveLength(3);
 
-    const removeFilter = screen.getByRole('button', { name: 'X' });
+    const removeFilter = screen.getByRole('button', { name: 'x' });
     fireEvent.click(removeFilter);
 
     const keyboardFilter = screen.getByRole('button', { name: 'Keyboard' });

@@ -1,0 +1,28 @@
+@import './styles/header.scss';
+@import './styles/homepage.scss';
+@import './styles/instrumentpage.scss';
+@import './styles/productspage.scss';
+@import './styles/shoppingCart.scss';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  color: black;
+}
+
+button,
+.nav-link {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  min-height: 120vh;
+}
+
+.root {
+  height: 100%;
+}

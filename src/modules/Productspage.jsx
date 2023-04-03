@@ -20,12 +20,7 @@ export const instrumentsList = [
   'trumpet',
   'cello',
 ];
-export const instrumentTypes = [
-  'Percussion',
-  'String',
-  'Keyboard',
-  'Wind',
-];
+export const instrumentTypes = ['Percussion', 'String', 'Keyboard', 'Wind'];
 export const instruments = {
   guitar: {
     name: 'Guitar',
@@ -85,29 +80,30 @@ function Productspage({ setShoppingCart }) {
   return (
     <section className="products-page">
       <h2>Collection || Instruments</h2>
-      <div className="filter">
-        <h3>Filter</h3>
-        {instrumentActive === false ? (
-          instrumentTypes.map((item) => (
-            <button
-              onClick={() => handleClick(item)}
-              type="button"
-              key={uniqid()}
-            >
-              {item}
-            </button>
-          ))
-        ) : (
-          <div className="cancel-filter">
-            <button type="button">{instrumentActive}</button>
-            <button type="button" onClick={() => setInstrumentActive(false)}>
-              X
-            </button>
-          </div>
-        )}
-      </div>
-      <div className="products">
-        {instrumentsList.map((item) => (instrumentActive === false
+      <div className="products-page-body">
+        <div className="filter">
+          <h3>Filter</h3>
+          {instrumentActive === false ? (
+            instrumentTypes.map((item) => (
+              <button
+                onClick={() => handleClick(item)}
+                type="button"
+                key={uniqid()}
+              >
+                {item}
+              </button>
+            ))
+          ) : (
+            <div className="cancel-filter">
+              <button type="button">{instrumentActive}</button>
+              <button type="button" className="cancel-button" onClick={() => setInstrumentActive(false)}>
+                x
+              </button>
+            </div>
+          )}
+        </div>
+        <div className="products">
+          {instrumentsList.map((item) => (instrumentActive === false
             || instrumentActive === instruments[item].type ? (
               <ProductCard
                 key={instruments[item].name}
@@ -116,7 +112,8 @@ function Productspage({ setShoppingCart }) {
                 source={instruments[item].source}
                 setShoppingCart={setShoppingCart}
               />
-          ) : null))}
+            ) : null))}
+        </div>
       </div>
     </section>
   );

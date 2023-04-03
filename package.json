@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "^3.1.0",
+    "bootstrap": "^5.2.3",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.9.0",
     "uniqid": "^5.4.0",
@@ -32,6 +34,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-vitest": "^0.0.54",
     "jsdom": "^21.1.1",
+    "sass": "^1.60.0",
     "vitest": "^0.29.7"
   }
 }
