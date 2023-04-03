@@ -103,7 +103,7 @@ function ShoppingCart({ shoppingCart, setDisplayCart, setShoppingCart }) {
           <h4>There&apos;s nothing in the cart yet</h4>
         )}
         {total > 0 ? (
-          <Link to="/" className="shopping-cart-button">
+          <Link to="/shopping-cart" className="shopping-cart-button">
             <button
               type="button"
               onClick={() => {
