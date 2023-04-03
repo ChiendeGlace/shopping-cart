@@ -52,7 +52,7 @@ function Instrumentpage({ setShoppingCart }) {
           <button onClick={handleClick} type="button">
             Add to cart
           </button>
-          <Link to="../products-page">
+          <Link to="../shopping-cart/products-page">
             <button type="button">Go back</button>
           </Link>
         </div>

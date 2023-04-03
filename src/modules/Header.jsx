@@ -7,14 +7,14 @@ function Header({ setDisplayCart, shoppingCart }) {
   const totalItems = shoppingCart.reduce((item, current) => item + current.quantity, 0);
   return (
     <header>
-      <Link to="/">
+      <Link to="/shopping-cart">
         <h1>MUSIC SHOP</h1>
       </Link>
       <div className="nav">
-        <NavLink className="nav-link" to="/">
+        <NavLink className="nav-link" to="/shopping-cart">
           HOME
         </NavLink>
-        <NavLink className="nav-link" to="/products-page">
+        <NavLink className="nav-link" to="/shopping-cart/products-page">
           PRODUCTS
         </NavLink>
         <div className="cart-div">

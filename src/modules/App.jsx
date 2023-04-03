@@ -15,13 +15,13 @@ function App() {
       <Header setDisplayCart={setDisplayCart} shoppingCart={shoppingCart} />
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/shopping-cart" element={<Homepage />} />
         <Route
-          path="/products-page"
+          path="/shopping-cart/products-page"
           element={<Productspage setShoppingCart={setShoppingCart} />}
         />
         <Route
-          path="/products-page/:id"
+          path="/shopping-cart/products-page/:id"
           element={<Instrumentpage setShoppingCart={setShoppingCart} />}
         />
       </Routes>

@@ -15,7 +15,7 @@ function Homepage() {
           an instrument &ndash; make it a reality with our expertly crafted
           gear. Start your musical journey today!
         </p>
-        <Link to="/products-page">
+        <Link to="./products-page">
           <button type="button">Visit the shop</button>
         </Link>
       </div>
